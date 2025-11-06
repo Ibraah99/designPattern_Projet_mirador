@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="fenetre" prefHeight="743.0" prefWidth="1294.0" stylesheets="@decoration/mirador.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.MiradorControleur">
+   <children>
+      <VBox id="menu" layoutX="-7.0" layoutY="92.0" prefHeight="651.0" prefWidth="83.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="92.0">
+         <children>
+            <Button id="menu-accueil" mnemonicParsing="false" prefHeight="77.0" prefWidth="104.0">
+               <graphic><ImageView fitHeight="35.0" fitWidth="35.0"><image><Image url="@decoration/menu/maison.png" /></image></ImageView></graphic>
+            </Button>
+            <Button id="menu-amis" mnemonicParsing="false" prefHeight="76.0" prefWidth="91.0">
+               <graphic><ImageView fitHeight="40.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@decoration.menu/amis.png" /></image></ImageView></graphic>
+            </Button>
+            </children>
+      </VBox>
+      <Pane id="entete" layoutX="-3.0" prefHeight="92.0" prefWidth="1294.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="536.0" layoutY="12.0" text="MIRADOR" textFill="#fff7f7">
+               <font><Font name="Josefin Sans Thin" size="48.0" /></font>
+            </Label>
+            </children>
+         <effect><DropShadow color="#7c7979" height="50.0" radius="24.5" width="50.0" /></effect>
+      </Pane>
+
+      <AnchorPane id="espace" layoutX="76.0" layoutY="92.0" prefHeight="651.0" prefWidth="1218.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="76.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="92.0">
+         <children>
+            <BorderPane layoutX="54.0" layoutY="54.0" prefHeight="552.0" prefWidth="1092.0" style="-fx-background-color: #FAFAFA; -fx-background-radius: 10;">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+               <left>
+                  <ImageView fx:id="imageViewAnime" fitHeight="450.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                     <BorderPane.margin>
+                        <Insets right="20.0" />
+                     </BorderPane.margin>
+                  </ImageView>
+               </left>
+               <center>
+                  <VBox spacing="15.0" BorderPane.alignment="TOP_LEFT">
+                     <children>
+                        <Label fx:id="labelTitrePrincipal" text="Titre de l'animé" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="36.0" />
+                           </font>
+                        </Label>
+                        <GridPane hgap="10.0" vgap="8.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="150.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <children>
+                              <Label text="Titre Anglais :" GridPane.rowIndex="0">
+                                 <font><Font name="System Bold" size="18.0" /></font>
+                              </Label>
+                              <Label fx:id="labelTitreAnglais" text="-" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                  <font><Font size="18.0" /></font>
+                              </Label>
+                              <Label text="Titre Japonais :" GridPane.rowIndex="1">
+                                 <font><Font name="System Bold" size="18.0" /></font>
+                              </Label>
+                              <Label fx:id="labelTitreJaponais" text="-" wrapText="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                  <font><Font size="18.0" /></font>
+                              </Label>
+                              <Label text="Année :" GridPane.rowIndex="2">
+                                 <font><Font name="System Bold" size="18.0" /></font>
+                              </Label>
+                              <Label fx:id="labelAnnee" text="-" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                  <font><Font size="18.0" /></font>
+                              </Label>
+                              <Label text="Type :" GridPane.rowIndex="3">
+                                 <font><Font name="System Bold" size="18.0" /></font>
+                              </Label>
+                              <Label fx:id="labelType" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                  <font><Font size="18.0" /></font>
+                              </Label>
+                              <Label text="ID MyAnimeList :" GridPane.rowIndex="4">
+                                 <font><Font name="System Bold" size="18.0" /></font>
+                              </Label>
+                              <Label fx:id="labelMalId" text="-" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                  <font><Font size="18.0" /></font>
+                              </Label>
+                           </children>
+                        </GridPane>
+                        <Hyperlink fx:id="hyperlienTrailer" text="Voir la bande-annonce">
+                           <font><Font size="16.0" /></font>
+                        </Hyperlink>
+                        <Hyperlink fx:id="hyperlienUrl" text="Voir la fiche sur MyAnimeList">
+                           <font><Font size="16.0" /></font>
+                        </Hyperlink>
+                     </children>
+                  </VBox>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
