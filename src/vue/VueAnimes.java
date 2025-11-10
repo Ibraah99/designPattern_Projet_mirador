@@ -21,23 +21,38 @@ public class VueAnimes extends Vue {
 		super.controleur = this.controleur = new ControleurAnime();
 	}
 
-	public void afficherAnimes(Anime anime) {
-		Label vueNomAnime = (Label) lookup("#nomAnimeFr");
-		vueNomAnime.setText(anime.getTitle());
-		Label vueNomAnime2 = (Label) lookup("#nomAnimeJp");
-		vueNomAnime2.setText(anime.getTitleJapanese());
-		
-		Label vueGenre = (Label) lookup("#typeAnime");
-		vueGenre.setText(anime.getType());
-		
-		Label vueAnneeAnime = (Label) lookup("#anneeAnime");
-		vueAnneeAnime.setText(Integer.toString(anime.getYear()));
-		
-		Label vueUrl = (Label) lookup("#urlAnime");
-		vueUrl.setText(anime.getUrl());
-		
-		
-		
+	public void afficherAnimes(Anime a) {
+
+	    
+	  /*  int position=0;
+	    for (Anime a : animes) {
+	    	
+	    	
+			position++;
+			if(position >= 1)break;
+	    }*/
+			
+	    	//Anime a = animes.get(0);
+
+		    Label vueNomAnime = (Label) lookup("#nomAnimeFr");
+		    vueNomAnime.setText(a.getTitle());
+
+		    Label vueNomAnime2 = (Label) lookup("#nomAnimeJp");
+		    vueNomAnime2.setText(a.getTitleJapanese());
+
+		    Label vueGenre = (Label) lookup("#typeAnime");
+		    vueGenre.setText(a.getType());
+
+		    Label vueAnneeAnime = (Label) lookup("#anneeAnime");
+		    vueAnneeAnime.setText(Integer.toString(a.getYear()));
+
+		    Label vueUrl = (Label) lookup("#urlAnime");
+		    vueUrl.setText(a.getUrl());
+	    	
+	    
+
+	    
 	}
+
 	
 }

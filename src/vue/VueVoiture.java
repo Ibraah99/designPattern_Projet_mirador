@@ -26,7 +26,7 @@ public class VueVoiture extends Vue {
 		int position = 0;
 		for(Voiture voiture : voitures) {
 			position++;
-			if(position > 6)break;
+			if(position >= 6)break;
 			
 			String idNom = "#nom-voiture" + position;
 			Label vueNom = (Label) lookup(idNom);

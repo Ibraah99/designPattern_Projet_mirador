@@ -6,6 +6,7 @@ import java.util.List;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import architecture.Controleur;
+import data.AnimeDAO;
 import modele.Anime;
 import vue.VueAnimes;
 import vue.VueNouvelles;
@@ -19,7 +20,7 @@ public class ControleurAnime extends Controleur {
 	public void initialiser()
 	{
 		
-		Anime anime = new Anime("link","Jujutsu Kaisen", "呪術廻戦", "TV-Shonen", 2020);
+		//Anime anime = new Anime("link","Jujutsu Kaisen", "呪術廻戦", "TV-Shonen", 2020);
 		/*Anime anime2 = new Anime();
 		Anime anime3 = new Anime();
 		
@@ -29,8 +30,10 @@ public class ControleurAnime extends Controleur {
 		animes.add(anime1);
 		animes.add(anime2);
 		animes.add(anime3);*/
-		
-		VueAnimes.getInstance().afficherAnimes(anime);
+        AnimeDAO dao = new AnimeDAO();
+        List<Anime> animes = dao.listerAnimes();
+        
+		VueAnimes.getInstance().afficherAnimes(animes.get(3));
 	}
 
 	

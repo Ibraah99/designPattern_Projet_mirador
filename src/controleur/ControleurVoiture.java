@@ -6,6 +6,7 @@ import java.util.List;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import architecture.Controleur;
+import data.VoitureDAO;
 import modele.Voiture;
 
 import vue.VueNouvelles;
@@ -20,7 +21,7 @@ public class ControleurVoiture extends Controleur {
 
 	public void initialiser()
 	{
-		Voiture voiture1 = new Voiture("Corolla", "Toyota");
+		/*Voiture voiture1 = new Voiture("Corolla", "Toyota");
 		Voiture voiture2 = new Voiture("Civic", "Honda");
 		Voiture voiture3 = new Voiture("Mustang", "Ford");
 		Voiture voiture4 = new Voiture("Camaro", "Chevrolet");
@@ -34,9 +35,11 @@ public class ControleurVoiture extends Controleur {
 		voitures.add(voiture3);
 		voitures.add(voiture4);
 		voitures.add(voiture5);
-		voitures.add(voiture6);
-		
-		VueVoiture.getInstance().afficherVoiture(voitures);
+		voitures.add(voiture6);*/
+	    VoitureDAO dao = new VoitureDAO();
+	    List<Voiture> voitures = dao.listerVoitures();
+	    VueVoiture.getInstance().afficherVoiture(voitures);
+		//VueVoiture.getInstance().afficherVoiture(voitures);
 	}
 
 	

@@ -2,52 +2,54 @@ package data;
 
 import java.io.InputStream;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
+import modele.Anime;
+
 public class AnimeDAO {
-	public String URL_ANIME="https://api.jikan.moe/v4/top/anime?type=ova";
-	String json = "";
-	
-	public void listerAnimes() {
-		// TODO : Retourner une liste d'objets animes
-		System.out.println("animeDao.listerAnimes()");
-		try {
-			URL url = new URL(URL_ANIME);
-			InputStream flux = url.openConnection().getInputStream();
-			Scanner lecteur = new Scanner(flux);
-			lecteur.useDelimiter("\\A");
-			json = lecteur.next();
-			//System.out.println(json);
-			lecteur.close();
-		} catch (Exception e) {
-			
-			e.printStackTrace();
-			return ;
-		}
-		  JsonParser parseur = new JsonParser();
-          JsonObject document = parseur.parse(json).getAsJsonObject();
+    public String URL_ANIME = "https://api.jikan.moe/v4/top/anime?type=ova";
 
-          JsonArray listeAnime = document.get("data").getAsJsonArray();
-          for (int position = 0; position < listeAnime.size(); position++) {
-        	  JsonObject animeJson = listeAnime.get(position).getAsJsonObject();
-        	  String title = animeJson.get("title").getAsString();
-        	  String type = animeJson.get("type").getAsString();
-        	 // String year = animeJson.get("year").getAsString();
-        	  String titleJapanese = animeJson.get("title_japanese").getAsString();
-        	 // String url = animeJson.get("url").getAsString();
-        	  System.out.println(title);
-        	  System.out.println(titleJapanese);
-        	  System.out.println(type);
-        	  //System.out.println(year);
-        	  //System.out.println(url);
-        	 
-        	  
-        	  
-          }
+    public List<Anime> listerAnimes() {
+        System.out.println("animeDao.listerAnimes()");
+        String json = "";
 
-	}
+        try {
+            URL url = new URL(URL_ANIME);
+            InputStream flux = url.openConnection().getInputStream();
+            Scanner lecteur = new Scanner(flux);
+            lecteur.useDelimiter("\\A");
+            json = lecteur.hasNext() ? lecteur.next() : "";
+            lecteur.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+
+        List<Anime> animes = new ArrayList<>();
+
+        JsonParser parseur = new JsonParser();
+        JsonObject document = parseur.parse(json).getAsJsonObject();
+        JsonArray listeAnime = document.getAsJsonArray("data");
+
+        for (int i = 0; i < listeAnime.size(); i++) {
+            JsonObject animeJson = listeAnime.get(i).getAsJsonObject();
+
+            String title = animeJson.get("title").getAsString();
+            String titleJapanese = animeJson.get("title_japanese").getAsString();
+            String type = animeJson.get("type").getAsString();
+            int year = animeJson.get("year") != null ? animeJson.get("year").getAsInt() : 0;
+            String url = animeJson.get("url").getAsString();
+
+            Anime anime = new Anime(url, title, titleJapanese, type, year);
+            animes.add(anime);
+        }
+
+        return animes;
+    }
 }

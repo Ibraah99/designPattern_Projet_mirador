@@ -60,7 +60,8 @@ public class EspaceDAO {
 				String author = xmlNouvelle.getElementsByTagName("dc:creator").item(0).getTextContent();
 				//System.out.println(author);
 				
-				Espace nouvelle = new Espace(title);
+				Espace nouvelle = new Espace();
+				nouvelle.setTitle(title);
 				nouvelle.setDescription(description);
 				nouvelle.setPubDate(pubDate);
 				nouvelle.setLink(link);
@@ -75,7 +76,7 @@ public class EspaceDAO {
 			e.printStackTrace();
 		}
 		
-		return null;	
+		return nouvelles;	
 		}
 
 

@@ -6,6 +6,7 @@ import java.util.List;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import architecture.Controleur;
+import data.FruitDAO;
 import modele.Espace;
 import modele.Fruit;
 import vue.VueFruit;
@@ -19,9 +20,9 @@ public class ControleurFruit extends Controleur {
 	}
 	public void initialiser()
 	{
-		Fruit fruit = new Fruit("Pomme", "Rosaceae", "Rosales", "Malus");
+		/*Fruit fruit = new Fruit("Pomme", "Rosaceae", "Rosales", "Malus");
 		Fruit fruit2 = new Fruit("Banane", "Musaceae", "Zingiberales", "Musa");
-		Fruit fruit3 = new Fruit("Orange", "Rutaceae", "Sapindales", "Citrus");
+		Fruit fruit3 = new Fruit("Orange", "Rutaceae", "Sapindales", "Citrus");*/
 		
 	
 		
@@ -34,6 +35,16 @@ public class ControleurFruit extends Controleur {
 		fruits.add(fruit3);*/
 		
 		//VueFruit.getInstance().afficherFruit(fruit);
+		FruitDAO dao = new FruitDAO();
+        List<Fruit> fruits = dao.listerFruits();
+
+        if(fruits.isEmpty()) {
+            System.out.println("⚠️ Aucun fruit reçu !");
+            return;
+        }
+
+        
+        VueFruit.getInstance().afficherFruit(fruits.get(0));
 	}
 
 }
