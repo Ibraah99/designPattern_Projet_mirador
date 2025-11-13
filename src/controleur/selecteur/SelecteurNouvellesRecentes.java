@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
@@ -39,28 +40,13 @@ public class SelecteurNouvellesRecentes extends MixeurDonnees {
 
     @Override
     public void trier() {
-        // Ici on veut trier les nouvelles du plus récent au plus ancien.
-        // On va utiliser Collections.sort avec un Comparateur simple.
-
-        Collections.sort(nouvellesFiltrees, new java.util.Comparator<Espace>() {
-            @Override
-            public int compare(Espace a, Espace b) {
-                // On compare les dates sous forme de texte.
-                // Attention : ce n'est pas la méthode la plus précise,
-                // mais pour un débutant ça fonctionne si le format est toujours identique.
-
-                String dateA = a.getPubDate();
-                String dateB = b.getPubDate();
-
-                // On met B avant A si B est "plus grand" (plus récent)
-                return dateB.compareTo(dateA);
-            }
-        });
+        Comparator<Espace> comparateur = new ComparateurNouvelleParDate();
+        Collections.sort(nouvellesFiltrees, comparateur);
     }
 
 
     @Override
     public void transformer() {
-        // Rien à transformer pour l'instant
+        
     }
 }

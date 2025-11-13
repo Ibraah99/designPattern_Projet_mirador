@@ -1,10 +1,11 @@
 
+import java.util.ArrayList;
 import java.util.List;
 
 import architecture.Controleur;
 import architecture.Fenetre;
 import controleur.selecteur.MixeurDonnees;
-import controleur.selecteur.SelecteurNouvellesInterdites;
+import controleur.selecteur.SelecteurNouvellesParMotsCles;
 import controleur.selecteur.SelecteurNouvellesRecentes;
 import data.AnimeDAO;
 import data.ArmeDAO;
@@ -48,15 +49,37 @@ public class App {
 			System.out.println(nouvelle.getPubDate());
 		}*/
 		//MixeurDonnees selecteurNouvelles = new SelecteurNouvellesInterdites(nouvelles);
-		MixeurDonnees selecteurNouvelles = new SelecteurNouvellesRecentes(nouvelles);
+		/*MixeurDonnees selecteurNouvelles = new SelecteurNouvellesRecentes(nouvelles);
 		selecteurNouvelles.executer();
 		
 		List<Espace> nouvellesRecentes = selecteurNouvelles.getNouvellesRecentes();
 		for(Espace nouvelle : nouvellesRecentes) {
-			//System.out.println(nouvelle.getAuthor());
+			System.out.println(nouvelle.getAuthor());
 			System.out.println(nouvelle.getPubDate());
-		}
+		}*/
 		
+		
+		List<String> mots = new ArrayList<String>();
+		mots.add("moon");
+		mots.add("Adam");
+		mots.add("China");
+
+		SelecteurNouvellesParMotsCles nouvellesRecherchees =
+		    new SelecteurNouvellesParMotsCles(nouvelles, mots);
+
+		nouvellesRecherchees.executer();
+
+		List<Espace> resultat = nouvellesRecherchees.getNouvellesRecentes(); 
+
+		for(Espace e : resultat) {
+			System.out.println("***************************************************************************************************************************************");
+			System.out.println(e.getAuthor());
+			System.out.println(e.getPubDate());
+		    System.out.println(e.getDescription()); 
+			System.out.println("***************************************************************************************************************************************");
+
+		}
+
 		
 		
 		
