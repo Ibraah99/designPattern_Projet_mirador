@@ -48,34 +48,42 @@ public class App {
 			System.out.println(nouvelle.getAuthor());
 			System.out.println(nouvelle.getPubDate());
 		}*/
-		//MixeurDonnees selecteurNouvelles = new SelecteurNouvellesInterdites(nouvelles);
-		/*MixeurDonnees selecteurNouvelles = new SelecteurNouvellesRecentes(nouvelles);
+	
+		MixeurDonnees selecteurNouvelles = new SelecteurNouvellesRecentes(nouvelles);
 		selecteurNouvelles.executer();
-		
 		List<Espace> nouvellesRecentes = selecteurNouvelles.getNouvellesRecentes();
-		for(Espace nouvelle : nouvellesRecentes) {
-			System.out.println(nouvelle.getAuthor());
-			System.out.println(nouvelle.getPubDate());
-		}*/
-		
-		
 		List<String> mots = new ArrayList<String>();
 		mots.add("moon");
 		mots.add("Adam");
 		mots.add("China");
-
-		SelecteurNouvellesParMotsCles nouvellesRecherchees =
-		    new SelecteurNouvellesParMotsCles(nouvelles, mots);
-
+		mots.add("Earth");
+		mots.add("Star");
+		mots.add("Auroras");
+		mots.add("Alaska");
+		mots.add("lab");
+		MixeurDonnees nouvellesRecherchees = new SelecteurNouvellesParMotsCles(nouvelles, mots);
 		nouvellesRecherchees.executer();
+		List<Espace> resultat = nouvellesRecherchees.getNouvellesFinales(); 
+		
 
-		List<Espace> resultat = nouvellesRecherchees.getNouvellesRecentes(); 
+		List<Espace> newsFiltred = new ArrayList<Espace>();
+		for(Espace esapce : nouvellesRecentes) {
+		    if(!newsFiltred.contains(esapce)) {
+		        newsFiltred.add(esapce);
+		    }
+		}
 
-		for(Espace e : resultat) {
+		for(Espace espace : resultat) {
+		    if(!newsFiltred.contains(espace)) {
+		        newsFiltred.add(espace);
+		    }
+		}
+
+		for(Espace espace : newsFiltred) {
 			System.out.println("***************************************************************************************************************************************");
-			System.out.println(e.getAuthor());
-			System.out.println(e.getPubDate());
-		    System.out.println(e.getDescription()); 
+			System.out.println(espace.getAuthor());
+			System.out.println(espace.getPubDate());
+		    System.out.println(espace.getDescription()); 
 			System.out.println("***************************************************************************************************************************************");
 
 		}
@@ -87,10 +95,10 @@ public class App {
 		//Controleur.choisirVuePrincipale(VueFruit.class);
 		//Controleur.choisirVuePrincipale(VueAnimes.class);
 		//Controleur.choisirVuePrincipale(VueArme.class);
-		//Controleur.choisirVuePrincipale(VueNouvelles.class);
+		Controleur.choisirVuePrincipale(VueNouvelles.class);
 		//Controleur.choisirVuePrincipale(VueVoiture.class);
 
-		//Fenetre.launch(Fenetre.class, parametres);	
+		Fenetre.launch(Fenetre.class, parametres);	
 	}
 
 }

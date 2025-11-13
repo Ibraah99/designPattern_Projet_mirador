@@ -67,6 +67,8 @@ public class EspaceDAO {
 				nouvelle.setLink(link);
 				nouvelle.setAuthor(author);
 				nouvelles.add(nouvelle);
+				
+				
 						
 			}
 

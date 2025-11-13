@@ -6,6 +6,9 @@ import java.util.List;
 import com.sun.media.jfxmedia.logging.Logger;
 
 import architecture.Controleur;
+import controleur.selecteur.MixeurDonnees;
+import controleur.selecteur.SelecteurNouvellesParMotsCles;
+import controleur.selecteur.SelecteurNouvellesRecentes;
 import data.EspaceDAO;
 import modele.Espace;
 import vue.VueNouvelles;
@@ -34,12 +37,43 @@ public class ControleurEspace extends Controleur {
 		//nouvellesDeEspace.add(espace4);
 		//nouvellesDeEspace.add(espace5);
 		//nouvellesDeEspace.add(espace6);
+		
 		  EspaceDAO dao = new EspaceDAO();
 		    List<Espace> nouvellesDeEspace = dao.listerNouvelles();
+		    
+			MixeurDonnees selecteurNouvelles = new SelecteurNouvellesRecentes(nouvellesDeEspace);
+			selecteurNouvelles.executer();
+			List<Espace> nouvellesRecentes = selecteurNouvelles.getNouvellesRecentes();
+			List<String> mots = new ArrayList<String>();
+			mots.add("moon");
+			mots.add("Adam");
+			mots.add("China");
+			mots.add("Earth");
+			mots.add("Star");
+			mots.add("Auroras");
+			mots.add("Alaska");
+			mots.add("lab");
+			MixeurDonnees nouvellesRecherchees = new SelecteurNouvellesParMotsCles(nouvellesDeEspace, mots);
+			nouvellesRecherchees.executer();
+			List<Espace> resultat = nouvellesRecherchees.getNouvellesFinales(); 
+			
 
-		    VueNouvelles.getInstance().afficherNouvelles(nouvellesDeEspace);
+			List<Espace> newsFiltred = new ArrayList<Espace>();
+			for(Espace esapce : nouvellesRecentes) {
+			    if(!newsFiltred.contains(esapce)) {
+			        newsFiltred.add(esapce);
+			    }
+			}
+
+			for(Espace espace : resultat) {
+			    if(!newsFiltred.contains(espace)) {
+			        newsFiltred.add(espace);
+			    }
+			}
+
+		    VueNouvelles.getInstance().afficherNouvelles(newsFiltred);
 		
-		VueNouvelles.getInstance().afficherNouvelles(nouvellesDeEspace);
+		//VueNouvelles.getInstance().afficherNouvelles(nouvellesDeEspace);
 	}
 
 }

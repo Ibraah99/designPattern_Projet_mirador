@@ -34,6 +34,14 @@ public class VueNouvelles extends Vue {
 			String idAuteur = "#nouvelle-auteur-" + position;
 			Label vueAuteur = (Label) lookup(idAuteur);
 			vueAuteur.setText(espace.getAuthor());
+			
+			String idDescription = "#nouvelle-desc-" + position;
+			Label vueDescription = (Label) lookup(idDescription);
+			vueDescription.setText(espace.getDescription());
+			
+			String idDate = "#nouvelle-date-" + position;
+			Label vueDate = (Label) lookup(idDate);
+			vueDate.setText(espace.getPubDate());
 		}
 		}
 		

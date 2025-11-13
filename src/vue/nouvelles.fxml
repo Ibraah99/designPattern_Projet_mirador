@@ -100,92 +100,146 @@
                      <children>
                         <Pane id="nouvelle-1" fx:id="nouvelle1" prefHeight="200.0" prefWidth="200.0" styleClass="nouvelle">
                            <children>
-                              <Pane layoutX="15.0" layoutY="15.0" prefHeight="192.0" prefWidth="123.0" />
-                              <Label id="nouvelle-titre-1" layoutX="147.0" layoutY="7.0" prefHeight="140.0" prefWidth="195.0" text="Moins d'ecureuils sur la route" textFill="WHITE" wrapText="true">
+                              <Label id="nouvelle-desc-1" layoutX="147.0" layoutY="7.0" prefHeight="140.0" prefWidth="195.0" text="Moins d'ecureuils sur la route" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font name="KacstPoster" size="32.0" />
+                                    <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Label id="nouvelle-auteur-1" layoutX="151.0" layoutY="171.0" prefHeight="44.0" prefWidth="187.0" styleClass="apercu-nouvelle-date" text="auteur" textFill="WHITE" wrapText="true">
+                              <Label id="nouvelle-date-1" layoutX="253.0" layoutY="179.0" prefHeight="44.0" prefWidth="89.0" styleClass="apercu-nouvelle-date" text="auteur" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font size="23.0" />
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label id="nouvelle-titre-1" layoutX="8.0" layoutY="7.0" prefHeight="217.0" prefWidth="129.0" text="Moins d'ecureuils sur la route" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label id="nouvelle-auteur-1" layoutX="151.0" layoutY="147.0" prefHeight="44.0" prefWidth="187.0" styleClass="apercu-nouvelle-date" text="auteur" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="10.0" />
                                  </font>
                               </Label>
                            </children>
                         </Pane>
                         <Pane id="nouvelle-2" fx:id="nouvelle2" prefHeight="243.0" prefWidth="351.0" styleClass="nouvelle" GridPane.columnIndex="1">
                            <children>
-                              <Pane layoutX="15.0" layoutY="15.0" prefHeight="192.0" prefWidth="123.0" />
-                              <Label id="nouvelle-titre-2" layoutX="147.0" layoutY="7.0" prefHeight="140.0" prefWidth="195.0" text="Moins d'ecureuils sur la route" textFill="WHITE" wrapText="true">
+                              <Label id="nouvelle-desc-2" layoutX="7.0" layoutY="90.0" prefHeight="108.0" prefWidth="339.0" text="Moins d'ecureuils sur la route" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font name="KacstPoster" size="32.0" />
+                                    <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Label id="nouvelle-auteur-2" layoutX="151.0" layoutY="171.0" prefHeight="44.0" prefWidth="187.0" styleClass="apercu-nouvelle-date" text="auteur" textFill="WHITE" wrapText="true">
+                              <Label id="nouvelle-titre-2" layoutY="7.0" prefHeight="75.0" prefWidth="161.0" text="Moins d'ecureuils sur la route" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font size="23.0" />
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label id="nouvelle-date-2" layoutX="19.0" layoutY="198.0" prefHeight="44.0" prefWidth="327.0" styleClass="apercu-nouvelle-date" text="auteur" textAlignment="JUSTIFY" textFill="WHITE" textOverrun="WORD_ELLIPSIS" wrapText="true">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label id="nouvelle-auteur-2" layoutX="183.0" layoutY="25.0" prefHeight="57.0" prefWidth="153.0" styleClass="apercu-nouvelle-date" text="auteur" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="10.0" />
                                  </font>
                               </Label>
                            </children></Pane>
                         <Pane id="nouvelle-3" fx:id="nouvelle3" prefHeight="200.0" prefWidth="200.0" styleClass="nouvelle" GridPane.columnIndex="2">
                            <children>
-                              <Label id="nouvelle-titre-3" layoutX="147.0" layoutY="7.0" prefHeight="140.0" prefWidth="195.0" text="Moins d'ecureuils sur la route" textFill="WHITE" wrapText="true">
+                              <Label id="nouvelle-desc-3" layoutX="147.0" layoutY="7.0" prefHeight="140.0" prefWidth="195.0" text="Moins d'ecureuils sur la route" textAlignment="JUSTIFY" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font name="KacstPoster" size="32.0" />
+                                    <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Pane layoutX="14.0" layoutY="14.0" prefHeight="192.0" prefWidth="123.0" />
-                              <Label id="nouvelle-auteur-3" layoutX="163.0" layoutY="155.0" prefHeight="44.0" prefWidth="187.0" styleClass="apercu-nouvelle-date" text="auteur" textFill="WHITE" wrapText="true">
+                              <Label id="nouvelle-auteur-3" layoutX="151.0" layoutY="147.0" prefHeight="44.0" prefWidth="187.0" styleClass="apercu-nouvelle-date" text="auteur" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font size="23.0" />
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label id="nouvelle-titre-3" layoutY="7.0" prefHeight="217.0" prefWidth="138.0" text="Moins d'ecureuils sur la route" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label id="nouvelle-date-3" layoutX="266.0" layoutY="181.0" prefHeight="44.0" prefWidth="89.0" styleClass="apercu-nouvelle-date" text="auteur" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="10.0" />
                                  </font>
                               </Label>
                            </children></Pane>
                         <Pane id="nouvelle-4" fx:id="nouvelle4" prefHeight="200.0" prefWidth="200.0" styleClass="nouvelle" GridPane.rowIndex="1">
                            <children>
-                              <Label id="nouvelle-titre-6" layoutX="142.0" prefHeight="140.0" prefWidth="195.0" textFill="WHITE" wrapText="true">
+                              <Label id="nouvelle-desc-6" layoutX="142.0" prefHeight="140.0" prefWidth="195.0" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font name="KacstPoster" size="32.0" />
+                                    <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Pane layoutX="14.0" layoutY="18.0" prefHeight="192.0" prefWidth="123.0" />
-                              <Label id="nouvelle-auteur-6" layoutX="164.0" layoutY="149.0" prefHeight="44.0" prefWidth="187.0" styleClass="apercu-nouvelle-date" textFill="WHITE" wrapText="true">
+                              <Label id="nouvelle-auteur-6" layoutX="132.0" layoutY="118.0" prefHeight="44.0" prefWidth="187.0" styleClass="apercu-nouvelle-date" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font size="23.0" />
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label id="nouvelle-titre-6" prefHeight="228.0" prefWidth="114.0" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label id="nouvelle-date-6" layoutX="248.0" layoutY="184.0" prefHeight="44.0" prefWidth="89.0" styleClass="apercu-nouvelle-date" text="auteur" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="10.0" />
                                  </font>
                               </Label>
                            </children></Pane>
                         <Pane id="nouvelle-5" fx:id="nouvelle5" prefHeight="200.0" prefWidth="200.0" styleClass="nouvelle" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
-                              <Label id="nouvelle-titre-5" layoutX="156.0" layoutY="7.0" prefHeight="140.0" prefWidth="195.0" textFill="WHITE" wrapText="true">
+                              <Label id="nouvelle-desc-5" layoutX="156.0" layoutY="7.0" prefHeight="140.0" prefWidth="195.0" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font name="KacstPoster" size="32.0" />
+                                    <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Pane layoutX="14.0" layoutY="18.0" prefHeight="192.0" prefWidth="123.0" />
-                              <Label id="nouvelle-auteur-5" layoutX="160.0" layoutY="156.0" prefHeight="44.0" prefWidth="187.0" styleClass="apercu-nouvelle-date" textFill="WHITE" wrapText="true">
+                              <Label id="nouvelle-auteur-5" layoutX="125.0" layoutY="125.0" prefHeight="44.0" prefWidth="187.0" styleClass="apercu-nouvelle-date" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font size="23.0" />
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label id="nouvelle-titre-5" layoutY="7.0" prefHeight="217.0" prefWidth="114.0" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label id="nouvelle-date-5" layoutX="247.0" layoutY="190.0" prefHeight="44.0" prefWidth="89.0" styleClass="apercu-nouvelle-date" text="auteur" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="10.0" />
                                  </font>
                               </Label>
                            </children></Pane>
                         <Pane id="nouvelle-6" fx:id="nouvelle6" prefHeight="200.0" prefWidth="200.0" styleClass="nouvelle" GridPane.columnIndex="2" GridPane.rowIndex="1">
                            <children>
-                              <Label id="nouvelle-titre-4" layoutX="141.0" layoutY="14.0" prefHeight="140.0" prefWidth="195.0" textFill="WHITE" wrapText="true">
+                              <Label id="nouvelle-desc-4" layoutX="141.0" layoutY="14.0" prefHeight="140.0" prefWidth="195.0" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font name="KacstPoster" size="32.0" />
+                                    <Font size="12.0" />
                                  </font>
                               </Label>
-                              <Label id="nouvelle-auteur-4" layoutX="149.0" layoutY="154.0" prefHeight="44.0" prefWidth="187.0" styleClass="apercu-nouvelle-date" textFill="WHITE" wrapText="true">
+                              <Label id="nouvelle-auteur-4" layoutX="129.0" layoutY="121.0" prefHeight="44.0" prefWidth="187.0" styleClass="apercu-nouvelle-date" textFill="WHITE" wrapText="true">
                                  <font>
-                                    <Font size="23.0" />
+                                    <Font size="10.0" />
                                  </font>
                               </Label>
-                              <Pane layoutX="14.0" layoutY="14.0" prefHeight="192.0" prefWidth="123.0" />
+                              <Label id="nouvelle-titre-4" layoutX="6.0" prefHeight="217.0" prefWidth="123.0" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <Label id="nouvelle-date-4" layoutX="239.0" layoutY="184.0" prefHeight="44.0" prefWidth="89.0" styleClass="apercu-nouvelle-date" text="auteur" textFill="WHITE" wrapText="true">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
                            </children></Pane>
                      </children>
                   </GridPane>
-                  <Label layoutX="3.0" layoutY="-1.0" prefHeight="69.0" prefWidth="577.0" text="Nouvelles de fil-vert.com" textFill="#4897a8">
+                  <Label layoutX="3.0" layoutY="-1.0" prefHeight="69.0" prefWidth="577.0" text="Nouvelles de l'ESPACE" textFill="#4897a8">
                      <font>
                         <Font size="42.0" />
                      </font>

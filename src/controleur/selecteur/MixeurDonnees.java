@@ -36,4 +36,9 @@ public abstract class MixeurDonnees {
 	}
 
 
+	public List<Espace> getNouvellesFinales() {
+		return nouvellesFiltrees;
+	}
+
+
 }
