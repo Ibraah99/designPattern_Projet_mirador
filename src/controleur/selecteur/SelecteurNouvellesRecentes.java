@@ -27,11 +27,11 @@ public class SelecteurNouvellesRecentes extends MixeurDonnees {
 
     	LocalDateTime limite = LocalDateTime.now().minusDays(jours);
 
-    	for (Espace e : nouvellesOriginales) {
+    	for (Espace espace : nouvellesOriginales) {
     	    try {
-    	        LocalDateTime d = LocalDateTime.parse(e.getPubDate(), RSS_FORMAT);
+    	        LocalDateTime d = LocalDateTime.parse(espace.getPubDate(), RSS_FORMAT);
     	        if (d.isAfter(limite)) {
-    	            nouvellesFiltrees.add(e);
+    	            nouvellesFiltrees.add(espace);
     	        }
     	    } catch (Exception ex) { }
     	}

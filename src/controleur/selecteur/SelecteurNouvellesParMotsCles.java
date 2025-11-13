@@ -22,23 +22,23 @@ public class SelecteurNouvellesParMotsCles extends MixeurDonnees {
         nouvellesFiltrees = new ArrayList<Espace>();
 
       
-        for (Espace e : nouvellesOriginales) {
+        for (Espace espace : nouvellesOriginales) {
 
             boolean contientMotCles = false;
 
             for (String mot : motsCles) {
 
-                if (e.getTitle() != null && e.getTitle().toLowerCase().contains(mot.toLowerCase())) {
+                if (espace.getTitle() != null && espace.getTitle().toLowerCase().contains(mot.toLowerCase())) {
                     contientMotCles = true;
                 }
 
-                if (e.getDescription() != null && e.getDescription().toLowerCase().contains(mot.toLowerCase())) {
+                if (espace.getDescription() != null && espace.getDescription().toLowerCase().contains(mot.toLowerCase())) {
                     contientMotCles = true;
                 }
             }
 
             if (contientMotCles) {
-                nouvellesFiltrees.add(e);
+                nouvellesFiltrees.add(espace);
             }
         }
     }
@@ -55,9 +55,9 @@ public class SelecteurNouvellesParMotsCles extends MixeurDonnees {
     @Override
     public void transformer() {
 
-        for (Espace e : nouvellesFiltrees) {
+        for (Espace espace : nouvellesFiltrees) {
 
-            String texte = e.getDescription();
+            String texte = espace.getDescription();
 
             if (texte == null) continue;
 
@@ -70,7 +70,7 @@ public class SelecteurNouvellesParMotsCles extends MixeurDonnees {
                 texte = texte.replace(mot.toUpperCase(), motRouge);
             }
 
-            e.setDescription(texte);
+            espace.setDescription(texte);
         }
     }
 
